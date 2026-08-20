@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll(".button-container button");
 const prevOperandDisplay = document.querySelector(".prev-operand");
 const currentOperandDisplay = document.querySelector(".current-operand");
+const dotBtn = document.getElementById("dot");
 
 // Variabler för ekvation
 let a = 0;
@@ -13,10 +14,13 @@ buttons.forEach(button => {
         const target = event.target;
         const value = target.dataset.value;
 
-        console.log(value)
+        console.log(currentOperandDisplay.textContent.slice(-1))
+
+        console.log(target)
         
         if(target.classList.contains("number") && operand === null){
             currentOperandDisplay.textContent += value;
+
 
         } else if (target.classList.contains("operand") && operand === null){
 
@@ -51,6 +55,13 @@ buttons.forEach(button => {
         clearAll()
        } else if (value === "⌫"){
         del()
+       }
+
+       
+       if(currentOperandDisplay.textContent.includes(".")){
+        dotBtn.disabled = true;
+       } else {
+        dotBtn.disabled = false;
        }
         
     })

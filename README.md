@@ -18,7 +18,7 @@ No installation or build step is needed.
 
 1. Clone the repo:
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/majakarlsson68gmailcom/calculator
    cd calculator
    ```
 2. Open `index.html` in a browser.
